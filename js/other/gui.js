@@ -299,6 +299,98 @@ function registerGUIEvents() {
 	addEvent("unload", window, function () {
 		autoSave();
 	});
+    
+    // Playbook virtual keys...
+    
+    addEvent("mousedown", document.getElementById("playbook_RIGHT"), function() {
+        var fakeE = new Object();
+        fakeE.keyCode = settings[3][0];
+        GameBoyKeyDown(fakeE);
+    });
+    addEvent("mouseup", document.getElementById("playbook_RIGHT"), function() {
+        var fakeE = new Object();
+        fakeE.keyCode = settings[3][0];
+        GameBoyKeyUp(fakeE);
+    });
+    
+    addEvent("mousedown", document.getElementById("playbook_LEFT"), function() {
+        var fakeE = new Object();
+        fakeE.keyCode = settings[3][1];
+        GameBoyKeyDown(fakeE);
+    });
+    addEvent("mouseup", document.getElementById("playbook_LEFT"), function() {
+        var fakeE = new Object();
+        fakeE.keyCode = settings[3][1];
+        GameBoyKeyUp(fakeE);
+    });
+    
+    addEvent("mousedown", document.getElementById("playbook_UP"), function() {
+        var fakeE = new Object();
+        fakeE.keyCode = settings[3][2];
+        GameBoyKeyDown(fakeE);
+    });
+    addEvent("mouseup", document.getElementById("playbook_UP"), function() {
+        var fakeE = new Object();
+        fakeE.keyCode = settings[3][2];
+        GameBoyKeyUp(fakeE);
+    });
+    
+    addEvent("mousedown", document.getElementById("playbook_DOWN"), function() {
+        var fakeE = new Object();
+        fakeE.keyCode = settings[3][3];
+        GameBoyKeyDown(fakeE);
+    });
+    addEvent("mouseup", document.getElementById("playbook_DOWN"), function() {
+        var fakeE = new Object();
+        fakeE.keyCode = settings[3][3];
+        GameBoyKeyUp(fakeE);
+    });
+    
+    addEvent("mousedown", document.getElementById("playbook_A"), function() {
+        var fakeE = new Object();
+        fakeE.keyCode = settings[3][4];
+        GameBoyKeyDown(fakeE);
+    });
+    addEvent("mouseup", document.getElementById("playbook_A"), function() {
+        var fakeE = new Object();
+        fakeE.keyCode = settings[3][4];
+        GameBoyKeyUp(fakeE);
+    });
+    
+    addEvent("mousedown", document.getElementById("playbook_B"), function() {
+        var fakeE = new Object();
+        fakeE.keyCode = settings[3][5];
+        GameBoyKeyDown(fakeE);
+    });
+    addEvent("mouseup", document.getElementById("playbook_B"), function() {
+        var fakeE = new Object();
+        fakeE.keyCode = settings[3][5];
+        GameBoyKeyUp(fakeE);
+    });
+    
+    addEvent("mousedown", document.getElementById("playbook_SELECT"), function() {
+        var fakeE = new Object();
+        fakeE.keyCode = settings[3][6];
+        GameBoyKeyDown(fakeE);
+    });
+    addEvent("mouseup", document.getElementById("playbook_SELECT"), function() {
+        var fakeE = new Object();
+        fakeE.keyCode = settings[3][6];
+        GameBoyKeyUp(fakeE);
+    });
+    
+    addEvent("mousedown", document.getElementById("playbook_START"), function() {
+        var fakeE = new Object();
+        fakeE.keyCode = settings[3][7];
+        GameBoyKeyDown(fakeE);
+    });
+    addEvent("mouseup", document.getElementById("playbook_START"), function() {
+        var fakeE = new Object();
+        fakeE.keyCode = settings[3][7];
+        GameBoyKeyUp(fakeE);
+    });
+    
+    
 }
 function onResizeOutput() {
 	if (typeof gameboy == "object" && gameboy != null && !gameboy.canvasFallbackHappened && (settings[21] || settings[11])) {

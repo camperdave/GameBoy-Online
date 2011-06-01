@@ -1,7 +1,7 @@
 var gameboy = null;						//GameBoyCore object.
 var gbRunInterval;						//GameBoyCore Timer
 var settings = [						//Some settings.
-	true, 								//Turn on sound.
+	false, 								//Turn on sound.
 	false,								//Force Mono sound.
 	false,								//Give priority to GameBoy mode
 	[39, 37, 38, 40, 88, 90, 16, 13],	//Keyboard button map.
