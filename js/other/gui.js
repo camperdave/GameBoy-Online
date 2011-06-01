@@ -110,7 +110,6 @@ function registerGUIEvents() {
 	addEvent("click", document.getElementById("external_file_clicker"), function () {
 		var address = prompt("Please input the ROM image's URL:", "");
 		if (address != null && address.length > 0) {
-			/**
             try {
 				new Ajax({
 					URL:"res/proxy.php",
@@ -136,8 +135,7 @@ function registerGUIEvents() {
 			catch (error) {
 				alert(error.message + " file: " + error.fileName + " line: " + error.lineNumber);
 			}
-            */
-            alert("Not Yet Implemented. Will use webworks api to do, rather than php!");
+
 		}
 	});
 	addEvent("click", document.getElementById("internal_file_clicker"), function () {
@@ -154,39 +152,7 @@ function registerGUIEvents() {
 			try {
 				if (this.files.length >= 1) {
 					cout("Reading the local file \"" + this.files[0].name + "\"", 0);
-					try {
-						//Gecko 1.9.2+ (Standard Method)
-						var binaryHandle = new FileReader();
-						binaryHandle.onload = function () {
-							if (this.readyState == 2) {
-								cout("file loaded.", 0);
-								try {
-									start(mainCanvas, document.getElementById("canvasAltContainer"), this.result);
-									initPlayer();
-								}
-								catch (error) {
-									alert(error.message + " file: " + error.fileName + " line: " + error.lineNumber);
-								}
-							}
-							else {
-								cout("loading file, please wait...", 0);
-							}
-						}
-						binaryHandle.readAsBinaryString(this.files[this.files.length - 1]);
-					}
-					catch (error) {
-						cout("Browser does not support the FileReader object, falling back to the non-standard File object access,", 2);
-						//Gecko 1.9.0, 1.9.1 (Non-Standard Method)
-						var romImageString = this.files[this.files.length - 1].getAsBinary();
-						try {
-							start(mainCanvas, document.getElementById("canvasAltContainer"), romImageString);
-							initPlayer();
-						}
-						catch (error) {
-							alert(error.message + " file: " + error.fileName + " line: " + error.lineNumber);
-						}
-						
-					}
+                    alert("Until RIM implements their local file access API, this isn't possible...");
 				}
 				else {
 					cout("Incorrect number of files selected for local loading.", 1);
