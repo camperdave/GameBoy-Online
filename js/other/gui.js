@@ -110,7 +110,8 @@ function registerGUIEvents() {
 	addEvent("click", document.getElementById("external_file_clicker"), function () {
 		var address = prompt("Please input the ROM image's URL:", "");
 		if (address != null && address.length > 0) {
-			try {
+			/**
+            try {
 				new Ajax({
 					URL:"res/proxy.php",
 					GET:["url=" + escape(address)],
@@ -135,6 +136,8 @@ function registerGUIEvents() {
 			catch (error) {
 				alert(error.message + " file: " + error.fileName + " line: " + error.lineNumber);
 			}
+            */
+            alert("Not Yet Implemented. Will use webworks api to do, rather than php!");
 		}
 	});
 	addEvent("click", document.getElementById("internal_file_clicker"), function () {
